@@ -1,13 +1,18 @@
-
-<% if notice %>
-  <%= render "message" %>
-<% end %>
-
-<%= render @article %>
-
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <div class="card text-center mt-4 shadow mb-5 bg-white rounded">
+      <div class="card-header font-italic">
+        autheur 
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to @article.title, article_path(@article), class: "text-success" %></h5>
+        <div class="card-text text-left"><%= simple_format(@article.description) %></div>
+        <%= link_to "Editer", edit_article_path(@article), class: "btn btn-outline-info" %>
+        <%= link_to "Supprimer", article_path(@article), data: { "turbo-method": :delete, "turbo-confirm": "Êtes-vous sûr?" }, class: "btn btn-outline-danger" %>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <small> Créé il y a <%= time_ago_in_words(@article.created_at) %>, édité il y a <%= time_ago_in_words(@article.updated_at) %> </small>
+      </div>
+    </div>
+  </div>
 </div>
