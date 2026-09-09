@@ -17,7 +17,7 @@
         <%= link_to "Supprimer", article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "Êtes-vous sûr?" }, class: "btn btn-outline-danger" %>
       </div>
       <div class="card-footer text-body-secondary">
-        <small> Créé il y a <a href="http://"></a> <%= time_ago_in_words(article.created_at) %>, édité il y a <%= time_ago_in_words(article.updated_at) %> </small>
+        <small> Créé il y a <%= time_ago_in_words(article.created_at) %>, édité il y a <%= time_ago_in_words(article.updated_at) %> </small>
       </div>
     </div>
   </div>
