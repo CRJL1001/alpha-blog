@@ -1,16 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="text-center mt-4" id="index-title">Liste des Articles</h1>
 
-<% content_for :title, "Articles" %>
+<div class="container">
+<% @articles.each do |article| %>
 
-<h1>Articles</h1>
-
-<div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
-    </p>
-  <% end %>
+<div class="row justify-content-md-center">
+  <div class="col-8">
+    <div class="card text-center mt-4 shadow mb-5 bg-white rounded">
+      <div class="card-header font-italic">
+        autheur 
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+        <p class="card-text"><%= truncate(article.description, length: 100) %></p>
+        <%= link_to "Voir plus", article_path(article), class: "btn btn-outline-success" %>
+        <%= link_to "Editer", edit_article_path(article), class: "btn btn-outline-info" %>
+        <%= link_to "Supprimer", article_path(article), data: { "turbo-method": :delete, "turbo-confirm": "Êtes-vous sûr?" }, class: "btn btn-outline-danger" %>
+      </div>
+      <div class="card-footer text-body-secondary">
+        <small> Créé il y a <a href="http://"></a> <%= time_ago_in_words(article.created_at) %>, édité il y a <%= time_ago_in_words(article.updated_at) %> </small>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<% end%>
+</div>
