@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css.
+ *
+ * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
+ * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
+ * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
+ * depending on specificity.
+ *
+ * Consider organizing styles into separate files for maintainability.
+ */
+
+ html, body {
+    height: 100%;
+ }
+
+ h1 {
+    color: red; 
+ }
+
+ .nav-link {
+    color: whitesmoke;
+ }
+
+ #logo {
+    text-transform: uppercase;
+    float: left;
+    font-size: 1.7em; 
+    letter-spacing: -1px;
+    font-weight: bold;
+ }
+
+ #logo:hover {
+    color: white; 
+    text-decoration: none;
+    transform: scale(1.02);
+    transition: all 0.1s ease-in-out;
+ }
+
+ #home-card {
+    margin : 0 auto; 
+    margin-top: 50px;
+    width: 80% !important;
+    height: 450px;
+    background-image: url("writing.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+ }
+
+ #home-card .card-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: 500;
+    color: whitesmoke; 
+    text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.8);
+ }
+
+ #home-card .card-text {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    color: whitesmoke; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+ }
+
+ .footer {
+    color: whitesmoke;
+ }
