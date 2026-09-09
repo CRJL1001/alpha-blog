@@ -1,4 +1,7 @@
-<p style="color: green"><%= notice %></p>
+
+<% if notice %>
+  <%= render "message" %>
+<% end %>
 
 <%= render @article %>
 
