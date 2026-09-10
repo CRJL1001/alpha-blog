@@ -18,7 +18,9 @@
           <%= "#{user.articles.count} articles"%>
           <br>
           <%= link_to "Voir le profil", user_path(user), class: "btn btn-outline-success mt-2" %>
-          <%= link_to "Editer le profil", edit_user_path(user), class: "btn btn-outline-info mt-2" %>
+          <% if !logged_out? && user == current_user %>
+            <%= link_to "Editer le profil", edit_user_path(user), class: "btn btn-outline-info mt-2" %>
+          <% end %>
         </div>
         <div class="card-footer text-body-secondary">
           <small> Nous à rejoins il y a <%= time_ago_in_words(user.created_at) %> </small>
