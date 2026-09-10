@@ -21,7 +21,7 @@
             <% if !logged_out? %>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Profile de <%= current_user.username %>
+                         <%= "(Admin) " if current_user.admin? %>Profile de <%= current_user.username %>
                     </a>
                     <ul class="dropdown-menu">
                         <li><%= link_to "Mon profil", user_path(current_user), class: "dropdown-item"%></li>
