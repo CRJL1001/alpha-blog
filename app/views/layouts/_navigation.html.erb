@@ -21,7 +21,10 @@
                 <%= link_to "Utilisateurs", users_path, class: "nav-link"%>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <%= link_to "Connexion", login_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+                <%= link_to "Déconnexion", logout_path, class: "nav-link", data: {"turbo-method": "delete", "turbo-confirm": "Êtes-vous sûr ?"} %>
             </li>
         </ul>
         <form class="d-flex" role="search">
