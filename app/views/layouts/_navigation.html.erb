@@ -16,8 +16,6 @@
                   <li><%= link_to "Créer un article", new_article_path, class: "dropdown-item"%></li>
                 <% end %>
                 <li><%= link_to "Voir les articles", articles_path, class: "dropdown-item" %></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
             </li>
             <% if !logged_out? %>
@@ -29,7 +27,7 @@
                         <li><%= link_to "Mon profil", user_path(current_user), class: "dropdown-item"%></li>
                         <li><%= link_to "Editer mon profil", edit_user_path(current_user), class: "dropdown-item" %></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <%= link_to "Supprimer mon profil", user_path(current_user), class: "dropdown-item text-danger", data: {"turbo-method": "delete", "turbo-confirm": "Êtes-vous sûr ? Cette action est irreversible !"}%>
                     </ul>
                 </li>
             <% end %>
