@@ -28,6 +28,8 @@ gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
 
+
+gem "byebug"
 gem "json", "< 3.0"
 
 # Reduces boot times through caching; required in config/boot.rb
