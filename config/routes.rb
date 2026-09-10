@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get "about" => "pages#about", as: :about
+
+  get "signup" => "users#new", as: :signup
+
+  resources :users, except: [:new]
 end
