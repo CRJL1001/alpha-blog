@@ -1,26 +1,35 @@
 <h1 class="text-center mt-4 text-black mb-4">Liste des utilisateurs</h1>
 
-<% @users.each do |user| %>
+<div class="container">
+  <div class="flickr_pagination mt-3">
+    <%= will_paginate @users, :container => false %>
+  </div>  
 
-<div class="row justify-content-md-center">
-  <div class="col-8">
-    <div class="card text-center mt-4 shadow mb-5 bg-white rounded">
-      <div class="card-header font-italic">
-        <%= link_to "#{user.username}", user_path(user), class: "text-black"%>
-      </div>
-      <div class="card-body">
-        <%= gravatar_for(user, size: 100) %>
-        <br>
-        <%= "#{user.articles.count} articles"%>
-        <br>
-        <%= link_to "Voir le profil", user_path(user), class: "btn btn-outline-success mt-2" %>
-        <%= link_to "Editer le profil", edit_user_path(user), class: "btn btn-outline-info mt-2" %>
-      </div>
-      <div class="card-footer text-body-secondary">
-        <small> Nous à rejoins il y a <%= time_ago_in_words(user.created_at) %> </small>
+  <% @users.each do |user| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8">
+      <div class="card text-center mt-4 shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
+          <%= link_to "#{user.username}", user_path(user), class: "text-black"%>
+        </div>
+        <div class="card-body">
+          <%= gravatar_for(user, size: 100) %>
+          <br>
+          <%= "#{user.articles.count} articles"%>
+          <br>
+          <%= link_to "Voir le profil", user_path(user), class: "btn btn-outline-success mt-2" %>
+          <%= link_to "Editer le profil", edit_user_path(user), class: "btn btn-outline-info mt-2" %>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <small> Nous à rejoins il y a <%= time_ago_in_words(user.created_at) %> </small>
+        </div>
       </div>
     </div>
   </div>
+  <% end%>
+
+  <div class="flickr_pagination mb-5">
+    <%= will_paginate @users, :container => false %>
+  </div>  
 </div>
 
-<% end%>

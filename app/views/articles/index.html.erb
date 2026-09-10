@@ -1,5 +1,11 @@
 <h1 class="text-center mt-4" id="index-title">Liste des Articles</h1>
 
 <div class="container">
+  <div class="flickr_pagination mt-3">
+    <%= will_paginate @articles, :container => false %>
+  </div>  
   <%= render "shared/articles" %>
+  <div class="flickr_pagination mb-5">
+    <%= will_paginate @articles, :container => false %>
+  </div>  
 </div>
