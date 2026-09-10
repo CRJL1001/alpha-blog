@@ -33,11 +33,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Bienvenue sur Alpha-blog #{@user.username}!"
-      redirect_to articles_path
+      redirect_to @user
     else
       render :new, status: :unprocessable_content
     end
-
   end
 
   
