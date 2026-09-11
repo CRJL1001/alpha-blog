@@ -1,25 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Projet de Blog comprenant les fontionalités:
+    - Rédaction, édition, suppression d'articles
+    - Création, Connexion à un compte sécurisés
+    - Création, modification de catégories
 
-Things you may want to cover:
+## Spécificités:
+    - Relations Many-To-Many articles <-> catégories
+    - Relation One-To-Many articles <-> utilisateur
+    - Sécurisation avec Bcrypt
+    - base de données SQlite3, (PgSQL en production)
+    - Bootstrap CSS, JS
+    - RubyOnRails
+    - Jeux de tests
 
-* Ruby version
+## Environment de développement: 
+    - WSL Unbuntu sous Windows 11 Pro
 
-* System dependencies
+## Lien Docker Hub : 
+    - https://hub.docker.com/r/crjl1001/blog_app
+    - docker pull crjl1001/blog_app
 
-* Configuration
 
-* Database creation
+### Ruby version -> ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [x86_64-linux]
 
-* Database initialization
+### System dependencies -> Git, Node.js >= 20, Docker/Docker Compose
 
-* How to run the test suite
+### Configuration
+    - Vous pouvez créer un utilisateur admin via la console rails "rails console" avec user = User.new(username: "admin",email: "admin@exemple.fr",password: "Test",admin: true)
+    - Sinon utiliser le site
 
-* Services (job queues, cache servers, search engines, etc.)
+### Tests -> rails test
 
-* Deployment instructions
 
-* ...
 
