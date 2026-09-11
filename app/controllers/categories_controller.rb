@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
+  def edit
+    @category = Category.find(params[:id])
+  end
+
   def new
     @category = Category.new
   end
@@ -23,6 +27,17 @@ class CategoriesController < ApplicationController
       render :new, status: :unprocessable_content
     end 
   end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:notice] = "Catégorie modifiée avec succès"
+      redirect_to @category
+    else
+      render :edit, status: :unprocessable_content
+    end   
+  end
+
 
   private
 

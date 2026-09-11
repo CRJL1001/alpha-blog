@@ -21,7 +21,7 @@
           <% if !logged_out? && (user == current_user || current_user.admin? ) %>
             <%= link_to "Editer le profil", edit_user_path(user), class: "btn btn-outline-info mt-2" %>
           <% end %>
-          <% if current_user.admin? %>
+          <% if !logged_out? && current_user.admin? %>
             <%= link_to "Supprimer", user_path(user), class: "btn btn-outline-danger mt-2", data: {"turbo-method": "delete", "turbo-confirm": "Êtes-vous sûr ? Cette action est irreversible !"} %>
           <% end %>
         </div>
