@@ -4,13 +4,15 @@ services:
       context: .
     command: bash -c "bin/rails db:prepare && bin/rails server -b 0.0.0.0 -p 3000"
     volumes:
-      - .:/app
+      - .:/rails
       - bundle_cache:/usr/local/bundle
-      - sqlite_data:/app/storage
-    ports:
-      - "3000:3000"
+      - sqlite_data:/rails/storage
     environment:
       RAILS_ENV: development
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
     stdin_open: true
     tty: true
 

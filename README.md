@@ -19,7 +19,11 @@
 
 ## Lien Docker Hub : 
     - https://hub.docker.com/r/crjl1001/blog_app
+
+# !!!!! Lancer le projet !!!!!
     - docker pull crjl1001/blog_app
+    - docker run -d --name blog_app -p 3000:3000 -e RAILS_ENV=development crjl1001/blog_app:latest bin/rails -b 0.0.0.0 -p 3000
+    - Se connecter sur localhost:3000
 
 
 ### Ruby version -> ruby 3.4.5 (2025-07-16 revision 20cda200d3) +PRISM [x86_64-linux]
